@@ -1,0 +1,206 @@
+body{
+    color: rgb(255, 147, 47);
+    background-color: black;
+    font-family: arial, sans-serif;
+}
+
+nav{
+    font-size: 22px;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px; 
+}
+
+a {
+    color:rgb(255, 147, 47);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+/* Imagens da aba Projetos */
+.p_i img {
+    width: 75px;
+    height: 75px;
+    border: 3.5px solid rgb(255, 147, 47);
+    border-radius: 50%;
+   
+}
+
+.p_i {
+    display: flex;
+    justify-content: center;
+}
+
+.p_i a{
+     display: inline-flex;
+     flex-direction: column; 
+     gap: 17.5px;
+     text-align: center;
+     align-items: center;
+}
+
+
+header img {
+    width: 150px;
+    height: 150px;
+    border: 3.5px solid rgb(255, 147, 47);
+    border-radius: 50%;
+   
+}
+
+.center {
+    text-align: center;
+}
+
+/* Rodapé */
+
+footer{
+     display: flex;
+     flex-direction: column; 
+     align-items: center;
+     gap: 10px;
+     padding: 30px 0;
+     font-size: 16px;
+     color: gray;
+}
+
+footer p{
+     margin: 0;
+}
+
+footer a:hover{
+     color: rgb(255, 255, 255);
+}
+
+
+.container {
+     padding: 0px 50px;
+}
+
+nav a:hover {
+     color: rgb(255, 255, 255);
+
+}
+
+.cont img{
+     width: 75px !important; 
+     height: 75px !important;
+     border-radius: 50% !important;
+     object-fit: cover !important;
+     border: 2px solid rgb(255, 147, 47);
+}
+
+.cont ul{
+      display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    list-style-type: none;
+    padding: 16px;
+}
+    
+.cont a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}   
+
+
+/* Animação de Fundo */
+.fundo {
+    position: fixed;          /* não rola junto com a página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;              /* atrás do conteúdo */
+    overflow: hidden;         /* esconde o que sai da tela (evita barra horizontal) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* espalha as 3 faixas na altura da tela */
+    pointer-events: none;     /* o fundo nunca atrapalha cliques */
+}
+
+/* Cada linha de logos */
+.faixa {
+    display: flex;
+    width: max-content;       /* a faixa tem a largura de todas as imagens juntas */
+    animation: rodar 40s linear infinite;
+}
+
+.faixa.inversa {
+    animation-direction: reverse; /* anda para o outro lado */
+}
+
+.faixa img {
+    width: 90px;
+    height: 90px;
+    margin-right: 80px;       /* use margin e não gap: assim o loop fecha exato */
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: white;  /* os .jpg têm fundo branco, então o círculo disfarça */
+    opacity: 0.12;            /* bem apagado para não competir com o texto */
+}
+
+/* Anda metade da faixa: como as duas metades são iguais, o loop é invisível */
+@keyframes rodar {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+
+/* Barra de Habilidades */
+
+.habilites{
+    margin-bottom: 20px;
+}
+
+.habilite-top{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.habilite-top span:last-child{
+    margin-left: auto;
+}
+ 
+.habilite-top img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: white;
+}
+
+.bar{
+    width: 100%;
+    height: 15px;
+    background-color: gray;
+    border-radius: 10px;
+    overflow: hidden; /* esconde o que passa da borda */
+}
+
+.level{
+    height: 100%;
+    background-color: rgb(255, 147, 47);
+    border-radius: 10px;
+    animation: encher 2.4s ease-in-out; /* animação de enchimento */
+}
+
+@keyframes encher {
+    from { width: 0; }
+}
+
+/* Transição de Paginas */
+
+@view-transition {
+        navigation: auto;
+}
